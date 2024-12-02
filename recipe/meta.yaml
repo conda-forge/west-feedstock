@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/west-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/west-{{ version }}.tar.gz
   sha256: 89320034be87099d16e75f4760ac0d1ed67e8978928e468ab993e3fba0cfe92f
 
 build:
@@ -14,15 +14,15 @@ build:
     - west = west.app.main:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 2
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - pip
     - setuptools
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - colorama
     - pyyaml >=5.1
     - pykwalify
@@ -37,6 +37,7 @@ test:
     - west --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/zephyrproject-rtos/west
