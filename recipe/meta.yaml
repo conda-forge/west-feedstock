@@ -13,7 +13,7 @@ build:
   entry_points:
     - west = west.app.main:main
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install --no-deps --no-build-isolation . -vv
   number: 0
 
 requirements:
@@ -26,7 +26,6 @@ requirements:
     - colorama
     - pyyaml >=5.1
     - pykwalify
-    - setuptools
     - packaging
 
 test:
