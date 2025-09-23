@@ -1,5 +1,5 @@
 {% set name = "west" %}
-{% set version = "1.4.0" %}
+{% set version = "1.5.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/west-{{ version }}.tar.gz
-  sha256: 908a07ae7cc334a88cb2f069b430484dfdfdda0c3422d14b9e23a43030cf9cc6
+  sha256: 7088fe0e9afe0719ebee95c51c529149f7bcfc919d83a8206d35fa9c683ed0a5
 
 build:
   entry_points:
